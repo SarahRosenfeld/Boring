@@ -1,0 +1,8 @@
+{% extends "suggestions/parent_template.html" %}
+{% block content %}
+    {% for post in posts %}
+            <h1>{{ post.title }}</h1>
+            <p>By {{ post.author }} </p>
+            <p>This {{ post.content }} streams on {{ post.service }} </p>
+    {% endfor %}
+{% endblock content %}
