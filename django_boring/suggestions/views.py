@@ -1,24 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
-posts = [
-    {
-        'author': 'Sarah',
-        'title': 'Community',
-        'content': 'TV Show',
-        'service': 'Netflix'
-    },
-    {
-        'author': 'Ian',
-        'title': 'Jerry McGuire',
-        'content': 'Movie',
-        'service': 'Netflix'
-    }
-]
+
 # home page for suggestions
 def home_page(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request, 'suggestions/home.html', context)
 
